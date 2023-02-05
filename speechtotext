@@ -1,0 +1,22 @@
+import speech_recognition as sr
+# sr.__version__
+r = sr.Recognizer()
+mic = sr.Microphone()
+
+print("wait a moment....")
+print(" ")
+print(" ")
+print("Now speak EAZI is listening....")
+
+# harvard = sr.AudioFile('harvard.wav')
+sr.Microphone.list_microphone_names()
+
+try:
+    with mic as source:
+        r.adjust_for_ambient_noise(source)
+        audio = r.listen(source)
+
+    output = r.recognize_google(audio, show_all = True)
+    print(output['alternative'][0]['transcript'])
+except:
+    print("sorry I didn't catch that....")
