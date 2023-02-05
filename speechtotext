@@ -1,5 +1,6 @@
 import speech_recognition as sr
 # sr.__version__
+#Ekweonu Chiwendu Emmanuel 
 r = sr.Recognizer()
 mic = sr.Microphone()
 
